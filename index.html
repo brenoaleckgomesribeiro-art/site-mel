@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>🌸 Áudios para a Mel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header com coração fofo -->
+        <header class="header">
+            <img src="imagens/hello-kitty-fofa.png" alt="Hello Kitty" class="hello-kitty-img" loading="lazy">
+            <h1>🌸 Áudios para a Mel</h1>
+            <p class="subtitle">Quando eu não estiver por perto, me escute aqui 💕</p>
+            
+            <!-- Contador com duas datas especiais -->
+            <div class="contador">
+                <div class="datas-container">
+                    <div class="data-item">
+                        <span class="data-emoji">👋</span>
+                        <p>Desde que nos conhecemos</p>
+                        <span class="data-numero" id="dias-conhecidos">0</span>
+                        <span class="data-label">dias</span>
+                    </div>
+                    <div class="divisor">♥</div>
+                    <div class="data-item">
+                        <span class="data-emoji">💍</span>
+                        <p>Desde o namoro</p>
+                        <span class="data-numero" id="dias-namoro">0</span>
+                        <span class="data-label">dias</span>
+                    </div>
+                </div>
+                <p class="mensagem-amor" id="mensagem-amor">💕</p>
+            </div>
+        </header>
+
+        <!-- Player 1 -->
+        <div class="audio-card">
+            <div class="card-header">
+                <span class="emoji-card">🌙</span>
+                <h2>Mensagem de boa noite</h2>
+            </div>
+            <div class="hello-kitty-decoration">
+                <img src="imagens/hello-kitty-dormindo.png" alt="Hello Kitty dormindo" class="kitty-small" loading="lazy">
+            </div>
+            <audio controls preload="metadata">
+                <source src="audios/boa-noite.mp3" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="audio-card">
+            <div class="card-header">
+                <span class="emoji-card">💗</span>
+                <h2>Mensagem especial</h2>
+            </div>
+            <div class="hello-kitty-decoration">
+                <img src="imagens/hello-kitty-coracao.png" alt="Hello Kitty com coração" class="kitty-small" loading="lazy">
+            </div>
+            <audio controls preload="metadata">
+                <source src="audios/mensagem.mp3" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+            
+            <!-- Botão surpresa (FORA do audio) -->
+            <button id="btn-surpresa" class="btn-surpresa">🎀 Clique aqui</button>
+            <div id="mensagem-surpresa" class="mensagem-surpresa" style="display: none;">
+                <p>💖 Mel, você é a pessoa mais especial do mundo!</p>
+                <p>São tantos momentos que já vivemos juntos...</p>
+                <p>E ainda vamos viver tantos outros! Te amo 💕</p>
+            </div>
+        </div>
+
+        <!-- Rodapé fofo -->
+        <footer class="footer">
+            <p>Feito com 💖 para a Mel</p>
+            <p class="small-text">⋆｡°✩ sempre por perto ✩°｡⋆</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
