@@ -4,14 +4,16 @@ console.log("🌸 Site da Mel carregado com amor! 💕");
 document.addEventListener('DOMContentLoaded', () => {
     const title = document.querySelector('.header h1');
     
-    title.style.opacity = '0';
-    title.style.transform = 'translateY(-20px)';
-    
-    setTimeout(() => {
-        title.style.transition = 'all 0.8s ease';
-        title.style.opacity = '1';
-        title.style.transform = 'translateY(0)';
-    }, 300);
+    if (title) {
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(-20px)';
+        
+        setTimeout(() => {
+            title.style.transition = 'all 0.8s ease';
+            title.style.opacity = '1';
+            title.style.transform = 'translateY(0)';
+        }, 300);
+    }
     
     console.log('💖 Tudo pronto para a Mel!');
     
