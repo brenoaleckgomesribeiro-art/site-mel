@@ -4,23 +4,112 @@ console.log("🌸 Site da Mel carregado com amor! 💕");
 document.addEventListener('DOMContentLoaded', () => {
     const title = document.querySelector('.header h1');
     
-    // Pequena animação ao carregar
-    title.style.opacity = '0';
-    title.style.transform = 'translateY(-20px)';
-    
-    setTimeout(() => {
-        title.style.transition = 'all 0.8s ease';
-        title.style.opacity = '1';
-        title.style.transform = 'translateY(0)';
-    }, 300);
+    if (title) {
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(-20px)';
+        
+        setTimeout(() => {
+            title.style.transition = 'all 0.8s ease';
+            title.style.opacity = '1';
+            title.style.transform = 'translateY(0)';
+        }, 300);
+    }
     
     console.log('💖 Tudo pronto para a Mel!');
     
-    // Inicializa os áudios
     initAudios();
+    carregarDatas();
+    configurarBotaoSurpresa();
 });
 
-// Mensagens que mudam a cada visita
+// ============================================
+// CARREGAR DATAS CORRETAMENTE
+// ============================================
+function carregarDatas() {
+    // 🔥 DATAS CORRIGIDAS - Coloque as datas corretas aqui!
+    // Formato: ANO-MÊS-DIA (ex: 2025-05-18)
+    const dataConhecidos = new Date('2025-05-18');  // ← Coloque a data que conheceu ela
+    const dataNamoro = new Date('2025-10-11');      // ← Coloque a data do namoro
+    const hoje = new Date();
+    
+    // Calcular dias (se a data for futura, vai dar negativo, mas vamos tratar)
+    const diffConhecidos = Math.floor((hoje - dataConhecidos) / (1000 * 60 * 60 * 24));
+    const diffNamoro = Math.floor((hoje - dataNamoro) / (1000 * 60 * 60 * 24));
+    
+    // Atualizar o contador
+    const diasConhecidosEl = document.getElementById('dias-conhecidos');
+    const diasNamoroEl = document.getElementById('dias-namoro');
+    
+    // Se a data for futura (diff negativo), mostra 0
+    if (diasConhecidosEl) {
+        diasConhecidosEl.textContent = diffConhecidos < 0 ? 0 : diffConhecidos;
+    }
+    if (diasNamoroEl) {
+        diasNamoroEl.textContent = diffNamoro < 0 ? 0 : diffNamoro;
+    }
+    
+    // Mensagem especial
+    function getMensagemAmor(dias) {
+        if (dias < 0) return '💕 Em breve começa essa história linda!';
+        if (dias < 7) return '🌱 Primeira semana de muito amor!';
+        if (dias < 30) return '🌷 Começando essa linda história...';
+        if (dias < 90) return '🌸 O amor floresce a cada dia!';
+        if (dias < 180) return '💕 Cada dia mais apaixonado!';
+        if (dias < 365) return '✨ Quase um ano de puro amor!';
+        if (dias < 730) return '🌟 Já é uma história de amor pra vida toda!';
+        return '💖 Amor eterno! Vocês são lindos juntos!';
+    }
+    
+    const mensagemAmorEl = document.getElementById('mensagem-amor');
+    if (mensagemAmorEl) {
+        mensagemAmorEl.textContent = getMensagemAmor(diffNamoro);
+    }
+    
+    console.log('📅 Conhecidos: ' + (diffConhecidos < 0 ? 0 : diffConhecidos) + ' dias');
+    console.log('💍 Namoro: ' + (diffNamoro < 0 ? 0 : diffNamoro) + ' dias');
+}
+
+// ============================================
+// CONFIGURAR BOTÃO SURPRESA
+// ============================================
+function configurarBotaoSurpresa() {
+    const btnSurpresa = document.getElementById('btn-surpresa');
+    const mensagemSurpresa = document.getElementById('mensagem-surpresa');
+    
+    if (btnSurpresa && mensagemSurpresa) {
+        // Remove qualquer evento anterior
+        btnSurpresa.replaceWith(btnSurpresa.cloneNode(true));
+        
+        // Pega o novo botão
+        const novoBtn = document.getElementById('btn-surpresa');
+        const novaMensagem = document.getElementById('mensagem-surpresa');
+        
+        novoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (novaMensagem.style.display === 'none' || novaMensagem.style.display === '') {
+                novaMensagem.style.display = 'block';
+                this.textContent = '💕 Esconder mensagem';
+                
+                // Rola até a mensagem
+                setTimeout(() => {
+                    novaMensagem.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center'
+                    });
+                }, 100);
+            } else {
+                novaMensagem.style.display = 'none';
+                this.textContent = '🎀 Clique aqui para uma surpresa';
+            }
+        });
+    }
+}
+
+// ============================================
+// MENSAGENS QUE MUDAM A CADA VISITA
+// ============================================
 const mensagens = [
     'Te amo mais que a Hello Kitty ama laços 💕',
     'Você é meu raio de sol na escuridão 🌟',
@@ -40,79 +129,18 @@ if (subtitle) {
     subtitle.textContent = msgAleatoria;
 }
 
-// DATAS ESPECIAIS
-const dataConhecidos = new Date('2025-05-18');
-const dataNamoro = new Date('2025-10-11');
-const hoje = new Date();
-
-// Calcular dias
-const diffConhecidos = Math.floor((hoje - dataConhecidos) / (1000 * 60 * 60 * 24));
-const diffNamoro = Math.floor((hoje - dataNamoro) / (1000 * 60 * 60 * 24));
-
-// Atualizar o contador
-const diasConhecidosEl = document.getElementById('dias-conhecidos');
-const diasNamoroEl = document.getElementById('dias-namoro');
-
-if (diasConhecidosEl) diasConhecidosEl.textContent = diffConhecidos;
-if (diasNamoroEl) diasNamoroEl.textContent = diffNamoro;
-
-// Mensagem especial baseada no tempo de namoro
-function getMensagemAmor(dias) {
-    if (dias < 0) return '💕 Em breve começa essa história linda!';
-    if (dias < 7) return '🌱 Primeira semana de muito amor!';
-    if (dias < 30) return '🌷 Começando essa linda história...';
-    if (dias < 90) return '🌸 O amor floresce a cada dia!';
-    if (dias < 180) return '💕 Cada dia mais apaixonado!';
-    if (dias < 365) return '✨ Quase um ano de puro amor!';
-    if (dias < 730) return '🌟 Já é uma história de amor pra vida toda!';
-    return '💖 Amor eterno! Vocês são lindos juntos!';
-}
-
-const mensagemAmorEl = document.getElementById('mensagem-amor');
-if (mensagemAmorEl) {
-    mensagemAmorEl.textContent = getMensagemAmor(diffNamoro);
-}
-
-// BOTÃO SURPRESA
-const btnSurpresa = document.getElementById('btn-surpresa');
-const mensagemSurpresa = document.getElementById('mensagem-surpresa');
-
-if (btnSurpresa && mensagemSurpresa) {
-    btnSurpresa.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (mensagemSurpresa.style.display === 'none' || mensagemSurpresa.style.display === '') {
-            mensagemSurpresa.style.display = 'block';
-            this.textContent = '💕 Esconder mensagem';
-            // Rola suavemente até a mensagem (mobile friendly)
-            setTimeout(() => {
-                mensagemSurpresa.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center',
-                    inline: 'nearest'
-                });
-            }, 100);
-        } else {
-            mensagemSurpresa.style.display = 'none';
-            this.textContent = '🎀 Clique aqui';
-        }
-    });
-}
-
+// ============================================
 // INICIALIZA OS ÁUDIOS
+// ============================================
 function initAudios() {
     const audios = document.querySelectorAll('audio');
     
     audios.forEach((audio, index) => {
-        // Previne que o áudio seja carregado automaticamente em celular
         audio.preload = 'metadata';
-        
-        // Remove o atributo autoplay se existir
         audio.removeAttribute('autoplay');
         
-        // Adiciona evento de play
         audio.addEventListener('play', () => {
             console.log(`🎵 Tocando áudio ${index + 1} para a Mel! 💕`);
-            // Pausa outros áudios que estejam tocando
             audios.forEach((otherAudio, otherIndex) => {
                 if (otherIndex !== index && !otherAudio.paused) {
                     otherAudio.pause();
@@ -120,23 +148,15 @@ function initAudios() {
             });
         });
         
-        // Adiciona evento de pause
-        audio.addEventListener('pause', () => {
-            console.log(`⏸️ Áudio ${index + 1} pausado`);
-        });
-        
-        // Adiciona evento de erro
         audio.addEventListener('error', (e) => {
             console.error(`❌ Erro no áudio ${index + 1}:`, e);
-            // Tenta recarregar em caso de erro
-            setTimeout(() => {
-                audio.load();
-            }, 1000);
         });
     });
 }
 
+// ============================================
 // EFEITO DE CHUVA DE CORAÇÕES
+// ============================================
 function criarCoracao() {
     const coracao = document.createElement('div');
     const emojis = ['💕', '❤️', '💗', '💖', '🌸', '✨', '💝', '💘'];
@@ -159,7 +179,7 @@ function criarCoracao() {
     }, 6000);
 }
 
-// Adiciona a animação no CSS (se não existir)
+// Adiciona a animação no CSS
 if (!document.querySelector('#heart-style')) {
     const styleSheet = document.createElement('style');
     styleSheet.id = 'heart-style';
@@ -178,18 +198,16 @@ if (!document.querySelector('#heart-style')) {
     document.head.appendChild(styleSheet);
 }
 
-// Cria corações - menos frequente em mobile para performance
+// Inicia os corações
 let heartInterval;
 let heartCount = 0;
-const MAX_HEARTS = 30; // Limita para não sobrecarregar
+const MAX_HEARTS = 30;
 
 function startHearts() {
-    // Limpa intervalos anteriores
     if (heartInterval) {
         clearInterval(heartInterval);
     }
     
-    // Verifica se é mobile para ajustar frequência
     const isMobile = window.innerWidth <= 768;
     const interval = isMobile ? 3500 : 2500;
     
@@ -198,7 +216,6 @@ function startHearts() {
             criarCoracao();
             heartCount++;
         } else {
-            // Reinicia o contador após um tempo
             setTimeout(() => {
                 heartCount = 0;
             }, 10000);
@@ -206,10 +223,8 @@ function startHearts() {
     }, interval);
 }
 
-// Inicia os corações
 startHearts();
 
-// Reinicia os corações quando a janela é redimensionada (ex: girar o celular)
 let resizeTimeout;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
@@ -218,28 +233,9 @@ window.addEventListener('resize', () => {
     }, 500);
 });
 
-// Cria alguns corações imediatamente ao carregar
+// Cria alguns corações imediatamente
 for (let i = 0; i < 3; i++) {
     setTimeout(criarCoracao, i * 400 + 200);
 }
-
-// LOGS DE INFORMAÇÃO
-console.log('💕 Datas carregadas:');
-console.log('📅 Conhecidos: ' + diffConhecidos + ' dias');
-console.log('💍 Namoro: ' + diffNamoro + ' dias');
-
-// Verifica se é mobile
-const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent);
-if (isMobile) {
-    console.log('📱 Modo mobile ativado!');
-    document.body.classList.add('mobile-mode');
-} else {
-    console.log('💻 Modo desktop ativado!');
-}
-
-// Previne recarga acidental com dois dedos (iOS)
-document.addEventListener('gesturestart', function(e) {
-    e.preventDefault();
-});
 
 console.log('✨ Site pronto para a Mel! 💕');

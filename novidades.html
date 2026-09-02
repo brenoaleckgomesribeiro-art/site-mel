@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#1a1a2e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>🚧 Novidades em Breve</title>
+    <title>🎵 Novidades - Áudios para a Mel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,83 +15,148 @@
 
     <div class="container">
 
-        <!-- MENU DE NAVEGAÇÃO - ATUALIZADO -->
+        <!-- MENU DE NAVEGAÇÃO -->
         <nav class="menu-navegacao">
             <a href="index.html" class="menu-link">🏠 Início</a>
             <a href="novidades.html" class="menu-link ativo">🎵 Novidades</a>
-            <a href="historias/index.html" class="menu-link">📖 Histórias</a>
+            <a href="historia.html" class="menu-link">📖 Histórias</a>
         </nav>
 
-        <!-- Header da página de lançamento -->
+        <!-- Header -->
         <header class="header">
             <img src="imagem/imagem1.jpeg" alt="Hello Kitty" class="hello-kitty-img" loading="lazy">
-            <h1>🚧 Novidades em Breve!</h1>
-            <p class="subtitle">Estamos preparando algo muito especial para você, Mel!</p>
-            
-            <!-- Caixa de aviso de lançamento -->
-            <div class="aviso-lancamento">
-                <span class="emoji-lancamento">🌸</span>
-                <p>Essa página é o <strong>cantinho das novidades</strong>.</p>
-                <p>Aqui você vai encontrar os <strong>próximos lançamentos</strong> de áudios e surpresas!</p>
-                <span class="emoji-lancamento">💖</span>
-            </div>
+            <h1>🎵 Novidades para a Mel</h1>
+            <p class="subtitle">Mais áudios especiais estão chegando! 💕</p>
 
-            <!-- PRÉVIA DOS PRÓXIMOS ÁUDIOS (lançamentos futuros) -->
-            <div class="previa-audios">
-                <h3 style="color: #f5a0b0; text-align: center; margin-bottom: 15px; font-size: 1.2rem;">
-                    🎧 Próximos Lançamentos
-                </h3>
-                
-                <div class="grid-previa">
-                    <!-- Áudio 11 -->
-                    <div class="card-previa">
-                        <span class="emoji-previa">🎵</span>
-                        <p class="titulo-previa">Hello Kitty e Melody</p>
-                        <p class="descricao-previa">A Canção da Chuva de Estrelas</p>
-                        <span class="status-previa">🔜 Em breve</span>
+            <!-- Contador com duas datas especiais -->
+            <div class="contador">
+                <div class="datas-container">
+
+                    <div class="data-item">
+                        <span class="data-emoji">👋</span>
+                        <p>Desde que nos conhecemos</p>
+                        <span class="data-numero" id="dias-conhecidos">0</span>
+                        <span class="data-label">dias</span>
                     </div>
 
-                    <!-- Áudio 12 -->
-                    <div class="card-previa">
-                        <span class="emoji-previa">🎶</span>
-                        <p class="titulo-previa">Hello Kitty e Kuromi</p>
-                        <p class="descricao-previa">O Segredo do Violino Mágico</p>
-                        <span class="status-previa">🔜 Em breve</span>
+                    <div class="divisor">♥</div>
+
+                    <div class="data-item">
+                        <span class="data-emoji">💍</span>
+                        <p>Desde o namoro</p>
+                        <span class="data-numero" id="dias-namoro">0</span>
+                        <span class="data-label">dias</span>
                     </div>
 
-                    <!-- Áudio 13 -->
-                    <div class="card-previa">
-                        <span class="emoji-previa">🌺</span>
-                        <p class="titulo-previa">My Melody e Hello Kitty</p>
-                        <p class="descricao-previa">O Jardim das Flores Encantadas</p>
-                        <span class="status-previa">🔜 Em breve</span>
-                    </div>
-
-                    <!-- Áudio 14 -->
-                    <div class="card-previa">
-                        <span class="emoji-previa">🍀</span>
-                        <p class="titulo-previa">Hello Kitty e Pusheen</p>
-                        <p class="descricao-previa">A Sorte do Trevo de Quatro Folhas</p>
-                        <span class="status-previa">🔜 Em breve</span>
-                    </div>
-
-                    <!-- Áudio 15 -->
-                    <div class="card-previa">
-                        <span class="emoji-previa">🌈</span>
-                        <p class="titulo-previa">Hello Kitty, Kuromi e My Melody</p>
-                        <p class="descricao-previa">O Arco-Íris do Bosque Encantado</p>
-                        <span class="status-previa">🔜 Em breve</span>
-                    </div>
                 </div>
 
-                <p style="text-align: center; color: #8a7a9a; margin-top: 15px; font-size: 0.85rem;">
-                    ✨ Mais novidades em breve! Fique de olho! ✨
-                </p>
+                <p class="mensagem-amor" id="mensagem-amor">💕</p>
             </div>
-            
-            <!-- Botão para voltar -->
-            <a href="index.html" class="btn-voltar">🎀 Voltar para os Áudios</a>
         </header>
+
+        <!-- Caixa de aviso de lançamento -->
+        <div class="aviso-lancamento">
+            <span class="emoji-lancamento">🌸</span>
+            <p>Essa página é o <strong>cantinho das novidades</strong>.</p>
+            <p>Aqui você vai encontrar os <strong>próximos lançamentos</strong> de áudios e surpresas!</p>
+            <span class="emoji-lancamento">💖</span>
+        </div>
+
+        <!-- PRÉVIA DOS PRÓXIMOS ÁUDIOS (lançamentos futuros) -->
+        <div class="previa-audios">
+            <h3 style="color: #f5a0b0; text-align: center; margin-bottom: 15px; font-size: 1.2rem;">
+                🎧 Próximos Lançamentos
+            </h3>
+            
+            <div class="grid-previa">
+                <!-- Áudio 11 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🎵</span>
+                    <p class="titulo-previa">Hello Kitty e Melody</p>
+                    <p class="descricao-previa">A Canção da Chuva de Estrelas</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 12 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🎶</span>
+                    <p class="titulo-previa">Hello Kitty e Kuromi</p>
+                    <p class="descricao-previa">O Segredo do Violino Mágico</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 13 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🌺</span>
+                    <p class="titulo-previa">My Melody e Hello Kitty</p>
+                    <p class="descricao-previa">O Jardim das Flores Encantadas</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 14 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🍀</span>
+                    <p class="titulo-previa">Hello Kitty e Pusheen</p>
+                    <p class="descricao-previa">A Sorte do Trevo de Quatro Folhas</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 15 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🌈</span>
+                    <p class="titulo-previa">Hello Kitty, Kuromi e My Melody</p>
+                    <p class="descricao-previa">O Arco-Íris do Bosque Encantado</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 16 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🦋</span>
+                    <p class="titulo-previa">Hello Kitty e My Melody</p>
+                    <p class="descricao-previa">O Mistério das Borboletas Brilhantes</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 17 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🌻</span>
+                    <p class="titulo-previa">Kuromi e Hello Kitty</p>
+                    <p class="descricao-previa">O Girassol que Sorria para a Lua</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 18 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🧁</span>
+                    <p class="titulo-previa">My Melody e Kuromi</p>
+                    <p class="descricao-previa">A Confeitaria dos Sonhos</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 19 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">🎠</span>
+                    <p class="titulo-previa">Hello Kitty e Amigas</p>
+                    <p class="descricao-previa">O Carrossel da Alegria</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+
+                <!-- Áudio 20 -->
+                <div class="card-previa">
+                    <span class="emoji-previa">💫</span>
+                    <p class="titulo-previa">Hello Kitty e Kuromi</p>
+                    <p class="descricao-previa">A Noite das Estrelas Cadentes</p>
+                    <span class="status-previa">🔜 Em breve</span>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: #8a7a9a; margin-top: 15px; font-size: 0.85rem;">
+                ✨ Mais novidades em breve! Fique de olho! ✨
+            </p>
+        </div>
+        
+        <!-- Botão para voltar -->
+        <a href="index.html" class="btn-voltar">🎀 Voltar para os Áudios</a>
 
         <!-- Rodapé -->
         <footer class="footer">
@@ -100,6 +165,8 @@
         </footer>
 
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 
