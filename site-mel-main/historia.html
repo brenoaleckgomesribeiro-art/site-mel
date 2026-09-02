@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>📖 Histórias para a Mel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav class="menu-navegacao">
+            <a href="index.html" class="menu-link">🏠 Início</a>
+            <a href="novidades.html" class="menu-link">🎵 Novidades</a>
+            <a href="historia.html" class="menu-link ativo">📖 Histórias</a>
+        </nav>
+
+        <!-- Header -->
+        <header class="header">
+            <img src="imagem/imagem1.jpeg" alt="Logo" class="hello-kitty-img" loading="lazy">
+
+            <h1>📖 Histórias para a Mel</h1>
+            <p class="subtitle">Cada palavra é um pedacinho do meu coração 💕</p>
+
+            <!-- Contador com duas datas especiais -->
+            <div class="contador">
+                <div class="datas-container">
+
+                    <div class="data-item">
+                        <span class="data-emoji">👋</span>
+                        <p>Desde que nos conhecemos</p>
+                        <span class="data-numero" id="dias-conhecidos">0</span>
+                        <span class="data-label">dias</span>
+                    </div>
+
+                    <div class="divisor">♥</div>
+
+                    <div class="data-item">
+                        <span class="data-emoji">💍</span>
+                        <p>Desde o namoro</p>
+                        <span class="data-numero" id="dias-namoro">0</span>
+                        <span class="data-label">dias</span>
+                    </div>
+
+                </div>
+
+                <p class="mensagem-amor" id="mensagem-amor">💕</p>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- TODAS AS HISTÓRIAS (5 TEMAS)                -->
+        <!-- ============================================ -->
+
+        <!-- História 1 - 🌙 O Quanto Eu Te Amo -->
+        <div class="historia-card">
+            <img src="imagem/historia1.jpeg" alt="O Quanto Eu Te Amo" class="historia-imagem" loading="lazy" onerror="this.src='imagem/imagem1.jpeg'">
+            <div class="historia-titulo">
+                <span class="emoji-titulo">🌙</span>
+                O Quanto Eu Te Amo
+            </div>
+            <div class="historia-texto">
+                <p>Mel, se eu tentasse medir o quanto te amo, eu precisaria de um número maior que todas as estrelas do céu. Cada uma delas brilha por você.</p>
+                <p>O tempo que passamos juntos me mostrou que o amor não precisa de razões — ele simplesmente existe. E o nosso existe em cada olhar, em cada risada, em cada abraço que parece que o mundo para.</p>
+                <p>E mesmo quando a gente briga ou discorda, o amor continua ali, firme. Não é porque a gente se ama que tudo é perfeito; é porque a gente se ama que a gente luta pra ser melhor um pelo outro.</p>
+                <p>Te amar é a coisa mais fácil e mais bonita que já aconteceu na minha vida. É como respirar: não preciso pensar, só faço. E vou fazer isso até o último suspiro.</p>
+                <p>Te amo. Simples assim. Imensamente assim.</p>
+            </div>
+
+            <!-- PLAYER DE ÁUDIO - HISTÓRIA 1 -->
+            <div class="audio-historia">
+                <div class="label-audio">
+                    🎧 <span>Áudio — O Quanto Eu Te Amo</span>
+                </div>
+                <audio controls preload="metadata">
+                    <source src="audios/historia_amor.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
+                </audio>
+            </div>
+
+            <div class="historia-divisor"></div>
+        </div>
+
+        <!-- História 2 - 💜 Como Eu Me Apaixonei Por Você -->
+        <div class="historia-card">
+            <img src="imagem/historia2.jpeg" alt="Como Eu Me Apaixonei Por Você" class="historia-imagem" loading="lazy" onerror="this.src='imagem/imagem1.jpeg'">
+            <div class="historia-titulo">
+                <span class="emoji-titulo">💜</span>
+                Como Eu Me Apaixonei Por Você
+            </div>
+            <div class="historia-texto">
+                <p>Não foi um trovão. Foi um sussurro. Não foi amor à primeira vista — foi amor ao primeiro silêncio confortável ao seu lado.</p>
+                <p>Eu me apaixonei por você aos poucos, sem perceber. Foi quando eu percebi que queria te contar as coisas boas e ruins do meu dia. Foi quando seu nome começou a aparecer em todos os meus pensamentos. Foi quando o futuro passou a ter seu rosto.</p>
+                <p>Eu me apaixonei pela sua forma de enxergar o mundo, pela sua risada que parece música, pela forma como você me olha como se eu fosse importante.</p>
+                <p>E o mais bonito de tudo é que você me escolheu também. A gente se encontrou no meio do caos e decidiu construir um jardim.</p>
+                <p>E é por isso que eu posso dizer, sem medo: me apaixonar por você foi a melhor coisa que a vida já fez por mim.</p>
+            </div>
+
+            <!-- PLAYER DE ÁUDIO - HISTÓRIA 2 -->
+            <div class="audio-historia">
+                <div class="label-audio">
+                    🎧 <span>Áudio — Como Eu Me Apaixonei Por Você</span>
+                </div>
+                <audio controls preload="metadata">
+                    <source src="audios/historia_apaixonei.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
+                </audio>
+            </div>
+
+            <div class="historia-divisor"></div>
+        </div>
+
+        <!-- História 3 - 🌹 Entre Histórias e Estrelas -->
+        <div class="historia-card">
+            <img src="imagem/historia3.jpeg" alt="Entre Histórias e Estrelas" class="historia-imagem" loading="lazy" onerror="this.src='imagem/imagem1.jpeg'">
+            <div class="historia-titulo">
+                <span class="emoji-titulo">🌹</span>
+                Entre Histórias e Estrelas
+            </div>
+            <div class="historia-texto">
+                <p>Há pessoas que passam pela nossa vida como um sopro. Você passou como uma tempestade de rosas — bagunçou tudo, mas deixou um rastro de cor e perfume.</p>
+                <p>Nossa história é feita de capítulos que a gente ainda vai escrever. Cada dia é uma página em branco, e a gente tem a chance de preencher com amor, risadas, lágrimas de alegria e aventuras.</p>
+                <p>Eu já sonhei com a gente velhinho, sentado numa varanda, olhando as estrelas e lembrando de tudo que vivemos. E eu sorrio só de pensar que ainda temos tanto chão pela frente.</p>
+                <p>Que a nossa história seja como as estrelas: eterna, brilhante e capaz de guiar quem está perdido. Porque você, Mel, é a minha estrela-guia. E eu prometo honrar cada capítulo da nossa história.</p>
+            </div>
+
+            <!-- PLAYER DE ÁUDIO - HISTÓRIA 3 -->
+            <div class="audio-historia">
+                <div class="label-audio">
+                    🎧 <span>Áudio — Entre Histórias e Estrelas</span>
+                </div>
+                <audio controls preload="metadata">
+                    <source src="audios/historia_estrelas.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
+                </audio>
+            </div>
+
+            <div class="historia-divisor"></div>
+        </div>
+
+        <!-- História 4 - 🖤 Wandinha e a História que Não Estava no Livro -->
+        <div class="historia-card">
+            <img src="imagem/historia4.jpeg" alt="Wandinha e a História que Não Estava no Livro" class="historia-imagem" loading="lazy" onerror="this.src='imagem/imagem1.jpeg'">
+            <div class="historia-titulo">
+                <span class="emoji-titulo">🖤</span>
+                Wandinha e a História que Não Estava no Livro
+            </div>
+            <div class="historia-texto">
+                <p>Wandinha sempre soube que o amor era uma fraqueza. Até que ele apareceu. Não como nos contos de fadas, mas como um enigma que ela queria desvendar.</p>
+                <p>Era alguém que não tinha medo do seu silêncio. Que ria das suas ironias. Que via beleza no seu lado mais sombrio. E que, sem querer, escreveu uma história que nenhum livro jamais contou.</p>
+                <p>Não era um amor clichê. Era um amor de olhares que diziam mais que palavras. De toques que pareciam promessas. De noites em claro conversando sobre tudo e sobre nada.</p>
+                <p>Wandinha descobriu que o amor não é fraqueza. É a maior coragem que alguém pode ter. É se entregar sabendo que pode doer, mas escolher ficar mesmo assim.</p>
+                <p>E essa história, Mel, é um pouquinho nossa também. Porque você me ensinou que até os corações mais protegidos merecem ser amados.</p>
+            </div>
+
+            <!-- PLAYER DE ÁUDIO - HISTÓRIA 4 -->
+            <div class="audio-historia">
+                <div class="label-audio">
+                    🎧 <span>Áudio — Wandinha e a História que Não Estava no Livro</span>
+                </div>
+                <audio controls preload="metadata">
+                    <source src="audios/historia_wandinha.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
+                </audio>
+            </div>
+
+            <div class="historia-divisor"></div>
+        </div>
+
+        <!-- História 5 - 🎧 Quando a Ansiedade Apertar -->
+        <div class="historia-card">
+            <img src="imagem/historia5.jpeg" alt="Quando a Ansiedade Apertar" class="historia-imagem" loading="lazy" onerror="this.src='imagem/imagem1.jpeg'">
+            <div class="historia-titulo">
+                <span class="emoji-titulo">🎧</span>
+                Quando a Ansiedade Apertar
+            </div>
+            <div class="historia-texto">
+                <p>Mel, eu sei que tem dias em que a mente pesa e o coração aperta. Dias em que tudo parece mais difícil, e a gente esquece o quanto é forte.</p>
+                <p>Nesses dias, eu quero que você lembre: você já passou por todos os dias difíceis até aqui. E você continua aqui. Isso já é uma vitória.</p>
+                <p>Respira fundo. Olha ao redor. Você está segura. Eu estou aqui. Não importa a distância, meu coração está sempre com você.</p>
+                <p>Quando a ansiedade apertar, fecha os olhos e pensa em mim. Pensa nas coisas boas que a gente já viveu e nas que ainda vão vir. Pensa que você é capaz, que você é forte, que você é amada.</p>
+                <p>E se precisar, coloca esse áudio para lembrar que você nunca está sozinha. Eu vou estar aqui, sempre, em cada batida do meu coração.</p>
+            </div>
+
+            <!-- PLAYER DE ÁUDIO - HISTÓRIA 5 -->
+            <div class="audio-historia">
+                <div class="label-audio">
+                    🎧 <span>Áudio — Quando a Ansiedade Apertar</span>
+                </div>
+                <audio controls preload="metadata">
+                    <source src="audios/historia_ansiedade.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
+                </audio>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>Feito com 💖 para a Mel</p>
+            <p class="small-text">⋆｡°✩ histórias do coração ✩°｡⋆</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
