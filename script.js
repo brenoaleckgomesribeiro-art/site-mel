@@ -17,10 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('💖 Tudo pronto para a Mel!');
     
+    configurarNavegacao();
     initAudios();
     carregarDatas();
     configurarBotaoSurpresa();
 });
+
+function configurarNavegacao() {
+    const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
+    const linksNavegacao = document.querySelectorAll('.menu-link');
+
+    linksNavegacao.forEach((link) => {
+        const paginaDoLink = link.getAttribute('href').split('/').pop();
+        const estaAtivo = paginaAtual === paginaDoLink ||
+            (paginaAtual === '' && paginaDoLink === 'index.html');
+
+        link.classList.toggle('ativo', estaAtivo);
+        link.setAttribute('aria-current', estaAtivo ? 'page' : 'false');
+    });
+}
 
 // ============================================
 // CARREGAR DATAS CORRETAMENTE
